@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add-Event</title>
+    
+</head>
+<body>
+    <div class="main-container">
+        <div class="title">Add Your Event</div>
+        <form action="http://localhost:8000/events-add" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+            <div class="data-box">
+                <div class="input-box">
+                    <span class="labels">Event Name</span>
+                    <input type="text" name="eventname" placeholder="Event Name" required>
+                </div>
+                <div class="data-box">
+                    <span class="labels">Event Date</span>
+                    <input type="date" name="eventdate" placeholder="Event Date" required>
+                </div>
+                <div class="data-box">
+                    <span class="labels">Event Time</span>
+                    <input type="time" name="eventtime" placeholder="Event Time" required>
+                </div>
+                <div class="data-box">
+                    <span class="labels">Location</span>
+                    <input type="text" name="eventlocation" placeholder="Location" required>
+                </div>
+                <div class="data-box">
+                    <span class="labels">Image</span>
+                    <input type="file" name="eventimage" placeholder="Image" required>
+                </div>
+            </div>
+            <div class="btn">
+                <input type="submit" value="Add Event">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>show-events</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{% static '/CSS/show_event_style.css' %}"
+</head>
+<body>
+    <div class="container">
+        <div class="title">Likes</div>
+        <div class="eventslist">
+            {% for evnlst in  eventslist%}
+            <img src="{{evnlst.image.url}}" width="150" height="150">
+            {{evnlst.event_name}}
+            {{evnlst.date}}
+            {{evnlst.time}}
+            {{evnlst.location}}
+            <a href="http://localhost:8000/events-add" class="add"><i class="fas fa-plus"></i></a>
+            <span class="heart"><i class="fas fa-heart"></i></span>
+            <br><br>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
